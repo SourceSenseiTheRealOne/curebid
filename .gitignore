@@ -1,0 +1,20 @@
+# Local secrets and custody
+.env
+.env.*
+!.env.example
+.local/
+.hermes/
+.codegraph/
+# Dependencies and output
+node_modules/
+.next/
+out/
+cache/
+coverage/
+dist/
+playwright-report/
+test-results/
+*.log
+.DS_Store
+# Foundry broadcasts may contain sensitive transaction state
+broadcast/
