@@ -17,7 +17,8 @@
 - [ ] Genuine expiry transaction and proof-backed refund.
 - [ ] Request-bound source-confirmed/settlement-pending UI against an actual deployment.
 - [ ] Full interrupted deployment/setup recovery; current runbook requires operator inspection of partial operations.
-- [ ] Hosted CI result (workflow source is not itself proof of a green hosted run).
+- [x] Hosted CI passed for code commit `2724c115e98c9edff2ac5a8d8d6792b9baa2cd3d`: https://github.com/SourceSenseiTheRealOne/curebid/actions/runs/34379575365
+- [x] Dependency remediation verified: `pnpm audit` reports no known vulnerabilities after Vitest 4.1.11 and ws 8.21.0 pins.
 
 ## Submission gaps
 - [ ] Public testnet deployment manifest and owned execution hashes.
