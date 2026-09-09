@@ -1,5 +1,9 @@
 import { describe, expect, test } from "vitest";
-import { SOURCE_CHAIN_ID, SETTLEMENT_CHAIN_ID, assertSupportedChain } from "../src/index.js";
+import {
+  SOURCE_CHAIN_ID,
+  SETTLEMENT_CHAIN_ID,
+  assertSupportedChain,
+} from "../src/index.js";
 
 describe("chain guards", () => {
   test("exposes the approved testnet chain ids", () => {

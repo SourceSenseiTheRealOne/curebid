@@ -5,7 +5,7 @@ import {CureRouter} from "../src/CureRouter.sol";
 import {CureTerms} from "../src/CureTerms.sol";
 import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 interface IForkPool { function supply(address,uint256,address,uint16) external; function borrow(address,uint256,uint256,uint16,address) external; }
-interface IFaucetAsset { function mint(address,uint256) external; }
+interface IFaucetAsset { function mint(address,address,uint256) external; }
 interface VmFork { function createSelectFork(string calldata,uint256) external returns(uint256); }
 contract AaveForkTest {
     Vm constant vm=Vm(address(uint160(uint256(keccak256("hevm cheat code")))));
@@ -17,11 +17,12 @@ contract AaveForkTest {
         address borrower=address(0xB0110); address provider=address(0xA1110);
         CureRouter router=new CureRouter(POOL,ASSET,DEBT);
         address faucet=0xC959483DBa39aa9E78757139af0e9a2EDEb3f42D;
-        vm.prank(borrower); IFaucetAsset(faucet).mint(ASSET,10000e6);
-        vm.prank(provider); IFaucetAsset(faucet).mint(ASSET,300e6);
+        address collateral=0xf8Fb3713D459D7C1018BD0A49D19b4C44290EBE5; // LINK: mintable, uncapped collateral; USDC supply is over its cap.
+        vm.prank(borrower); IFaucetAsset(faucet).mint(collateral,borrower,10000 ether);
+        vm.prank(provider); IFaucetAsset(faucet).mint(ASSET,provider,300e6);
         vm.startPrank(borrower);
-        IERC20(ASSET).approve(POOL,10000e6);
-        IForkPool(POOL).supply(ASSET,10000e6,borrower,0);
+        IERC20(collateral).approve(POOL,10000 ether);
+        IForkPool(POOL).supply(collateral,10000 ether,borrower,0);
         IForkPool(POOL).borrow(ASSET,1000e6,2,0,borrower);
         vm.stopPrank();
         uint256 beforeDebt=IERC20(DEBT).balanceOf(borrower);

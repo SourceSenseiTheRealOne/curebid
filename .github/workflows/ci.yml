@@ -1,0 +1,27 @@
+name: CureBid checks
+on:
+  push:
+    branches: [main, development, staging]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    env:
+      NEXT_TELEMETRY_DISABLED: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - run: bash scripts/bootstrap-toolchain.sh
+      - run: bash scripts/wsl-run.sh pnpm install --frozen-lockfile
+      - run: bash scripts/wsl-run.sh pnpm test
+      - run: bash scripts/wsl-run.sh forge test
+      - run: bash scripts/wsl-run.sh pnpm typecheck
+      - run: bash scripts/wsl-run.sh pnpm lint
+      - run: bash scripts/wsl-run.sh pnpm build
+      - run: git diff --check

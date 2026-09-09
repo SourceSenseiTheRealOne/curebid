@@ -6,10 +6,21 @@
   "packageManager": "pnpm@10.30.1",
   "scripts": {
     "test": "vitest run",
-    "typecheck": "tsc -b --pretty false",
-    "build": "tsc -b --pretty false",
+    "typecheck": "tsc -b --pretty false && pnpm --filter @curebid/web typecheck",
+    "build": "pnpm --filter @curebid/web build",
     "doctor": "tsx scripts/doctor.ts",
-    "verify:repayment": "tsx scripts/verify-repayment.ts"
+    "verify:repayment": "tsx scripts/verify-repayment.ts",
+    "lint": "prettier --check \"{apps/web,packages/protocol/src,packages/protocol/test,scripts,tests}/**/*.{ts,tsx,css}\"",
+    "format": "prettier --write \"{apps/web,packages/protocol/src,packages/protocol/test,scripts,tests}/**/*.{ts,tsx,css}\"",
+    "test:browser": "playwright test",
+    "test:contracts": "forge test",
+    "dev": "pnpm --filter @curebid/web dev",
+    "start": "pnpm --filter @curebid/web start",
+    "deploy:testnet": "tsx scripts/deploy.ts --testnet",
+    "testnet": "tsx scripts/testnet.ts",
+    "judge:verify": "tsx scripts/judge-verify.ts",
+    "funding:status": "tsx scripts/funding-status.ts",
+    "abi:export": "tsx scripts/export-abi.ts"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.13.0",

@@ -1,0 +1,7 @@
+node_modules
+.next
+out
+cache
+dist
+dist-scripts
+apps/web/next-env.d.ts

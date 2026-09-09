@@ -9,7 +9,7 @@ Read `context/capsule.md` and `context/stack.md` before edits. Approved design/p
 - Source router Repaid/Expired outcomes are mutually exclusive. Creditcoin assigned escrow only pays/refunds from real authenticated Attestcoin outcome proof; timeout alone cannot erase a repayment claim.
 - Distinguish Aave actual debt reduction from requested repayment and token transfers. Require receipt success, authentic router and Pool logs, full request/domain/party/amount/time binding and replay protection.
 - Native CTC reimbursement is not USD. No fabricated price conversion or fake bridged tokens.
-- Blockchain tools run in WSL Ubuntu-24.04. Coordinator bootstraps verified tools under `$HOME/.local/share/curebid/toolchains/`. Do not read or modify global agent configuration.
+- Blockchain tools run in WSL distro `Ubuntu` only, never Ubuntu-24.04 or the recovered quarantine distro. Coordinator bootstraps verified tools under `$HOME/.local/share/curebid/toolchains/`. Do not read or modify global agent configuration.
 - CodeGraph status/init/sync before investigation and affected after source changes. Keep its state ignored. Windows CodeGraph may be used over this canonical checkout.
 - Financial UI controls remain accessible flat HTML. Original Three.js chrome/mint debt/escrow mechanism is required, state-driven, lazily loaded and disposable; reduced-motion/pause/no-WebGL/mobile fallbacks required. No simulated successful settlement on real routes.
 - Pin direct dependencies and lockfile. Current registry probes: Next 16.3.4, USC SDK 0.18.0, ASC contracts 0.2.1; recheck dependency compatibility before use. Attribute official/open-source components; no CipherBid or competitor product code reuse.

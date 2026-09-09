@@ -12,6 +12,9 @@ out/
 cache/
 coverage/
 dist/
+dist-scripts/
+*.tsbuildinfo
+next-env.d.ts
 playwright-report/
 test-results/
 *.log

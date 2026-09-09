@@ -17,7 +17,10 @@ describe("fresh testnet wallets", () => {
       const privateState = await stat(join(dir, "wallets.private.json"));
       expect((privateState.mode & 0o077).toString(8)).toBe("0");
 
-      const publicJson = await readFile(join(dir, "public-addresses.json"), "utf8");
+      const publicJson = await readFile(
+        join(dir, "public-addresses.json"),
+        "utf8",
+      );
       expect(publicJson).not.toContain("privateKey");
       expect(publicJson).not.toContain("mnemonic");
       await expect(createFreshTestnetWallets(dir)).rejects.toThrow();

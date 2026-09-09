@@ -9,7 +9,16 @@ describe("parseAssetAmount", () => {
   });
 
   test("rejects non-canonical or imprecise amounts", () => {
-    for (const input of ["1.0000001", "+1", "-1", "1e6", "01", "1.", ".1", ""]) {
+    for (const input of [
+      "1.0000001",
+      "+1",
+      "-1",
+      "1e6",
+      "01",
+      "1.",
+      ".1",
+      "",
+    ]) {
       expect(() => parseAssetAmount(input, 6), input).toThrow();
     }
   });
@@ -17,6 +26,11 @@ describe("parseAssetAmount", () => {
   test("rejects unsafe decimal configuration and uint256 overflow", () => {
     expect(() => parseAssetAmount("1", -1)).toThrow();
     expect(() => parseAssetAmount("1", 78)).toThrow();
-    expect(() => parseAssetAmount("115792089237316195423570985008687907853269984665640564039458", 18)).toThrow();
+    expect(() =>
+      parseAssetAmount(
+        "115792089237316195423570985008687907853269984665640564039458",
+        18,
+      ),
+    ).toThrow();
   });
 });
