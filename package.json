@@ -29,12 +29,17 @@
     "prettier": "3.9.6",
     "tsx": "4.20.6",
     "typescript": "5.9.2",
-    "vitest": "3.2.4"
+    "vitest": "4.1.11"
   },
   "dependencies": {
     "@gluwa/asc-contracts": "0.2.1",
     "@gluwa/usc-sdk": "0.18.0",
     "@openzeppelin/contracts": "5.4.0",
     "ethers": "6.15.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "ws": "8.21.0"
+    }
   }
 }
