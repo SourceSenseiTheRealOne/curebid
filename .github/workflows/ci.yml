@@ -13,6 +13,7 @@ jobs:
       contents: read
     env:
       NEXT_TELEMETRY_DISABLED: '1'
+      SEPOLIA_FORK_RPC: https://sepolia.gateway.tenderly.co
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:

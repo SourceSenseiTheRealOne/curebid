@@ -6,14 +6,14 @@ import {CureTerms} from "../src/CureTerms.sol";
 import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 interface IForkPool { function supply(address,uint256,address,uint16) external; function borrow(address,uint256,uint256,uint16,address) external; }
 interface IFaucetAsset { function mint(address,address,uint256) external; }
-interface VmFork { function createSelectFork(string calldata,uint256) external returns(uint256); }
+interface VmFork { function createSelectFork(string calldata,uint256) external returns(uint256); function envOr(string calldata,string calldata) external view returns(string memory); }
 contract AaveForkTest {
     Vm constant vm=Vm(address(uint160(uint256(keccak256("hevm cheat code")))));
     address constant POOL=0x6Ae43d3271ff6888e7Fc43Fd7321a503ff738951;
     address constant ASSET=0x94a9D9AC8a22534E3FaCa9F4e7F2E2cf85d5E4C8;
     address constant DEBT=0x36B5dE936eF1710E1d22EabE5231b28581a92ECc;
     function testRealAaveSupplyBorrowAndThirdPartyRepayment() public {
-        VmFork(address(vm)).createSelectFork("https://ethereum-sepolia-rpc.publicnode.com",11660009);
+        VmFork(address(vm)).createSelectFork(VmFork(address(vm)).envOr("SEPOLIA_FORK_RPC","https://ethereum-sepolia-rpc.publicnode.com"),11660009);
         address borrower=address(0xB0110); address provider=address(0xA1110);
         CureRouter router=new CureRouter(POOL,ASSET,DEBT);
         address faucet=0xC959483DBa39aa9E78757139af0e9a2EDEb3f42D;
