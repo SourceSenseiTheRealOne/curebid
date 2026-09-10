@@ -16,7 +16,7 @@
 - [x] Seven-slide evidence-backed deck and 44.48-second silent recorded UI walkthrough, explicitly labelled local UI/public testnets and not live signing.
 
 ## Remaining handoff items (not disguised as completed)
-- [ ] Superseded trial escrow cleanup: its own original two-hour deadline must expire. Bounded `cleanup-superseded.ts` worker waits for proof-safe recovery; read `superseded-cleanup.json` before calling it complete.
+- [x] Superseded trial escrow refunded and withdrawn after genuine source expiry and native proof. Independent readback confirms zero reserved funds, zero total credits and zero balance. Evidence: `docs/evidence/superseded-cleanup.json`.
 - [ ] Team identity, organiser form and actual hackathon submission require user input/action.
 - [x] Public frontend: https://curebid.vercel.app, deployed through the user’s Vercel account. Repository made public with explicit permission. Eight browser tests pass against the hosted production URL.
 - [ ] Autonomous recovery of every arbitrary interrupted setup is not claimed: ambiguous pre-broadcast intents fail closed for operator inspection.

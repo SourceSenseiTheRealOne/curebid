@@ -1,0 +1,13 @@
+{
+  "market": "0x763C8394bb33E64F84395E99e3C416f05C06a2D2",
+  "requestId": "1",
+  "state": 4,
+  "reserved": "0",
+  "borrowerCredit": "0",
+  "totalCredits": "0",
+  "balance": "0",
+  "verifiedAt": "2026-09-10T14:44:28.336Z",
+  "sourceExpiry": "0xa6bb7c8fbcf6e8a028f3e292cf68725db2eabf6e5c53b9e866c8cb2e1a07d30e",
+  "creditcoinRefund": "0x7a0ccb27be57e71052afd7fd46fc536d60a03d609ff53849f7206c471ee3da7e",
+  "creditcoinWithdrawal": "0xc2289c4063c1d4089ed5465b0832a8d86ee05763075fc60e29e0fde12529a42c"
+}
