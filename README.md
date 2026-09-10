@@ -4,7 +4,7 @@
 
 ## Delivery status
 
-**Deployed and exercised on public testnets.** Request 1 repaid 3 USDC through Aave and reimbursed/paid out 0.07 CTC through native Attestcoin proof. Request 2 proved source expiry, refunded the borrower and paid out the refund. Canonical escrow readback: zero reserved funds, zero outstanding credits and zero balance. See [actual execution evidence](docs/evidence/execution-notes.md) and [44-second recorded UI walkthrough](docs/submission/curebid-walkthrough.mp4). This is a local UI connected to deployed public testnet contracts, not a hosted production app. Team/submission details remain user-supplied; superseded trial cleanup is tracked separately.
+**Deployed and exercised on public testnets.** Request 1 repaid 3 USDC through Aave and reimbursed/paid out 0.07 CTC through native Attestcoin proof. Request 2 proved source expiry, refunded the borrower and paid out the refund. Canonical escrow readback: zero reserved funds, zero outstanding credits and zero balance. See [actual execution evidence](docs/evidence/execution-notes.md) and [44-second recorded UI walkthrough](docs/submission/curebid-walkthrough.mp4). The testnet UI is publicly hosted at **https://curebid.vercel.app** on Vercel, with GitHub deployment integration. Team/submission details remain user-supplied; superseded trial cleanup is tracked separately.
 
 Verified locally: 48 Foundry tests (including actual Aave supply/borrow/third-party repayment on a pinned Sepolia fork), 16 TypeScript tests, 8 browser tests, strict types, formatting and Next production build. Tests simulate cryptographic outcomes only inside contract test fixtures. Production verification cannot select a simulated verifier.
 

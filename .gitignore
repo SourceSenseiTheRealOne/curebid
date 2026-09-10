@@ -21,3 +21,6 @@ test-results/
 .DS_Store
 # Foundry broadcasts may contain sensitive transaction state
 broadcast/
+
+.vercel
+.env*

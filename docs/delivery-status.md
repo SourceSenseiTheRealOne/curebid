@@ -18,7 +18,7 @@
 ## Remaining handoff items (not disguised as completed)
 - [ ] Superseded trial escrow cleanup: its own original two-hour deadline must expire. Bounded `cleanup-superseded.ts` worker waits for proof-safe recovery; read `superseded-cleanup.json` before calling it complete.
 - [ ] Team identity, organiser form and actual hackathon submission require user input/action.
-- [ ] Public frontend hosting is not configured. Contracts and receipt evidence are public; the app itself is run locally.
+- [x] Public frontend: https://curebid.vercel.app, deployed through the user’s Vercel account. Repository made public with explicit permission. Eight browser tests pass against the hosted production URL.
 - [ ] Autonomous recovery of every arbitrary interrupted setup is not claimed: ambiguous pre-broadcast intents fail closed for operator inspection.
 
 Current execution receipts, superseded-deployment history and exact proof boundaries are documented in `docs/evidence/execution-notes.md`. This is a testnet prototype, not an audited production financial service.
