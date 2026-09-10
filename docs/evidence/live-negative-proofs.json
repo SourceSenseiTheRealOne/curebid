@@ -1,0 +1,25 @@
+{
+  "scope": "Read-only eth_call against deployed contracts and real native proof; no malicious transactions broadcast",
+  "outcomes": [
+    {
+      "test": "settled request replay",
+      "rejected": true,
+      "reason": "not assigned"
+    },
+    {
+      "test": "provider substitution with valid native proof",
+      "rejected": true,
+      "reason": "missing or ambiguous outcome"
+    },
+    {
+      "test": "different request with valid native proof",
+      "rejected": true,
+      "reason": "missing or ambiguous outcome"
+    },
+    {
+      "test": "wrong source chain key",
+      "rejected": true,
+      "reason": "chain domain"
+    }
+  ]
+}

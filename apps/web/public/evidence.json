@@ -1,0 +1,196 @@
+{
+  "checkedAt": "2026-09-10T13:35:18.365Z",
+  "provenance": "CureBid-owned public testnet execution; real receipts and chain readback",
+  "deployment": {
+    "sourceChainId": 11155111,
+    "settlementChainId": 102031,
+    "chainKey": 1,
+    "router": "0xD0007a77bdeEc0A554b2A55E13A542c684Df73E9",
+    "market": "0xD0007a77bdeEc0A554b2A55E13A542c684Df73E9",
+    "verifier": "0x682E804C025342AD83143DFc097836ee396eFE8C",
+    "debtToken": "0x36B5dE936eF1710E1d22EabE5231b28581a92ECc",
+    "sourceBlock": 11675043,
+    "settlementBlock": 5463613
+  },
+  "requests": [
+    {
+      "id": "1",
+      "state": 3,
+      "borrower": "0x2E7b9fbd8b9a1652A310f58b4854682Ff045E656",
+      "provider": "0x30f50d7222e544FF5849987Fd33bd9A7569C7CCe",
+      "amount": "3000000",
+      "cap": "100000000000000000",
+      "reimbursement": "70000000000000000",
+      "executeBy": 1789052205,
+      "digest": "0xd01bd45a26d29eaf2f3de514e8d105f30e361ae910c1df7ca07f1ee1d989e70a",
+      "quotes": [
+        {
+          "provider": "0x30f50d7222e544FF5849987Fd33bd9A7569C7CCe",
+          "reimbursement": "70000000000000000"
+        },
+        {
+          "provider": "0xbcB91e4fEE4B9cF74f780154B1a8176C42A88Af8",
+          "reimbursement": "90000000000000000"
+        }
+      ],
+      "sourceOutcome": 1,
+      "sourceTransactions": [
+        {
+          "hash": "0x7852c72318a698309a08a2a20277005fe899eb3f099ffeb7c0f5e1ea529a7620",
+          "block": 11675118,
+          "status": 1,
+          "logs": [
+            {
+              "address": "0x94a9D9AC8a22534E3FaCa9F4e7F2E2cf85d5E4C8",
+              "topics": [
+                "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+                "0x00000000000000000000000030f50d7222e544ff5849987fd33bd9a7569c7cce",
+                "0x000000000000000000000000d0007a77bdeec0a554b2a55e13a542c684df73e9"
+              ],
+              "data": "0x00000000000000000000000000000000000000000000000000000000002dc6c0"
+            },
+            {
+              "address": "0x94a9D9AC8a22534E3FaCa9F4e7F2E2cf85d5E4C8",
+              "topics": [
+                "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925",
+                "0x00000000000000000000000030f50d7222e544ff5849987fd33bd9a7569c7cce",
+                "0x000000000000000000000000d0007a77bdeec0a554b2a55e13a542c684df73e9"
+              ],
+              "data": "0x0000000000000000000000000000000000000000000000000000000000000000"
+            },
+            {
+              "address": "0x94a9D9AC8a22534E3FaCa9F4e7F2E2cf85d5E4C8",
+              "topics": [
+                "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925",
+                "0x000000000000000000000000d0007a77bdeec0a554b2a55e13a542c684df73e9",
+                "0x0000000000000000000000006ae43d3271ff6888e7fc43fd7321a503ff738951"
+              ],
+              "data": "0x00000000000000000000000000000000000000000000000000000000002dc6c0"
+            },
+            {
+              "address": "0x36B5dE936eF1710E1d22EabE5231b28581a92ECc",
+              "topics": [
+                "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+                "0x0000000000000000000000002e7b9fbd8b9a1652a310f58b4854682ff045e656",
+                "0x0000000000000000000000000000000000000000000000000000000000000000"
+              ],
+              "data": "0x00000000000000000000000000000000000000000000000000000000002dc553"
+            },
+            {
+              "address": "0x36B5dE936eF1710E1d22EabE5231b28581a92ECc",
+              "topics": [
+                "0x4cf25bc1d991c17529c25213d3cc0cda295eeaad5f13f361969b12ea48015f90",
+                "0x0000000000000000000000002e7b9fbd8b9a1652a310f58b4854682ff045e656",
+                "0x0000000000000000000000000000000000000000000000000000000000000000"
+              ],
+              "data": "0x00000000000000000000000000000000000000000000000000000000002dc553000000000000000000000000000000000000000000000000000000000000016d00000000000000000000000000000000000000000b05572f0f52226c70e12165"
+            },
+            {
+              "address": "0x6Ae43d3271ff6888e7Fc43Fd7321a503ff738951",
+              "topics": [
+                "0x804c9b842b2748a22bb64b345453a3de7ca54a6ca45ce00d415894979e22897a",
+                "0x00000000000000000000000094a9d9ac8a22534e3faca9f4e7f2e2cf85d5e4c8"
+              ],
+              "data": "0x000000000000000000000000000000000000000001dc65d1c358fa275cdfdb370000000000000000000000000000000000000000021dccf010980cdd2c67c7ba0000000000000000000000000000000000000000021164906f7a0af0bd67c7ba000000000000000000000000000000000000000009682fd16637c1707ebcf44800000000000000000000000000000000000000000b05572f0f52226c70e12165"
+            },
+            {
+              "address": "0x94a9D9AC8a22534E3FaCa9F4e7F2E2cf85d5E4C8",
+              "topics": [
+                "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+                "0x000000000000000000000000d0007a77bdeec0a554b2a55e13a542c684df73e9",
+                "0x00000000000000000000000016da4541ad1807f4443d92d26044c1147406eb80"
+              ],
+              "data": "0x00000000000000000000000000000000000000000000000000000000002dc6c0"
+            },
+            {
+              "address": "0x94a9D9AC8a22534E3FaCa9F4e7F2E2cf85d5E4C8",
+              "topics": [
+                "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925",
+                "0x000000000000000000000000d0007a77bdeec0a554b2a55e13a542c684df73e9",
+                "0x0000000000000000000000006ae43d3271ff6888e7fc43fd7321a503ff738951"
+              ],
+              "data": "0x0000000000000000000000000000000000000000000000000000000000000000"
+            },
+            {
+              "address": "0x6Ae43d3271ff6888e7Fc43Fd7321a503ff738951",
+              "topics": [
+                "0xa534c8dbe71f871f9f3530e97a74601fea17b426cae02e1c5aee42c96c784051",
+                "0x00000000000000000000000094a9d9ac8a22534e3faca9f4e7f2e2cf85d5e4c8",
+                "0x0000000000000000000000002e7b9fbd8b9a1652a310f58b4854682ff045e656",
+                "0x000000000000000000000000d0007a77bdeec0a554b2a55e13a542c684df73e9"
+              ],
+              "data": "0x00000000000000000000000000000000000000000000000000000000002dc6c00000000000000000000000000000000000000000000000000000000000000000"
+            },
+            {
+              "address": "0x94a9D9AC8a22534E3FaCa9F4e7F2E2cf85d5E4C8",
+              "topics": [
+                "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925",
+                "0x000000000000000000000000d0007a77bdeec0a554b2a55e13a542c684df73e9",
+                "0x0000000000000000000000006ae43d3271ff6888e7fc43fd7321a503ff738951"
+              ],
+              "data": "0x0000000000000000000000000000000000000000000000000000000000000000"
+            },
+            {
+              "address": "0xD0007a77bdeEc0A554b2A55E13A542c684Df73E9",
+              "topics": [
+                "0x3f2ab3c8edefadbfa99c8fa28bc87c69df0dd529e474a905fd2395b27e1bcda5",
+                "0xd01bd45a26d29eaf2f3de514e8d105f30e361ae910c1df7ca07f1ee1d989e70a",
+                "0x0000000000000000000000002e7b9fbd8b9a1652a310f58b4854682ff045e656",
+                "0x00000000000000000000000030f50d7222e544ff5849987fd33bd9a7569c7cce"
+              ],
+              "data": "0x00000000000000000000000000000000000000000000000000000000002dc6c0000000000000000000000000000000000000000000000000000000006aa2aaf0"
+            }
+          ]
+        }
+      ],
+      "settlementTransactions": [
+        "0xcf4d7adb835fa0f7eda3823d81798790d4ba9bd0c73c5e91ce9eaf23d0b3d84e"
+      ]
+    },
+    {
+      "id": "2",
+      "state": 4,
+      "borrower": "0x2E7b9fbd8b9a1652A310f58b4854682Ff045E656",
+      "provider": "0x30f50d7222e544FF5849987Fd33bd9A7569C7CCe",
+      "amount": "3000000",
+      "cap": "100000000000000000",
+      "reimbursement": "70000000000000000",
+      "executeBy": 1789046190,
+      "digest": "0xcfd20cdf07740e9c63a717076ceb724fee9c725e6a7f046f4dbe7cbc1503165d",
+      "quotes": [
+        {
+          "provider": "0x30f50d7222e544FF5849987Fd33bd9A7569C7CCe",
+          "reimbursement": "70000000000000000"
+        }
+      ],
+      "sourceOutcome": 2,
+      "sourceTransactions": [
+        {
+          "hash": "0xbf6a32a7db3aa97134b071082b85cf3410be6a0be288ac66d6c97a52eaafca7e",
+          "block": 11675213,
+          "status": 1,
+          "logs": [
+            {
+              "address": "0xD0007a77bdeEc0A554b2A55E13A542c684Df73E9",
+              "topics": [
+                "0xe7b8ce00d550553d2adf4adc21321bcd1d010ef2860f754886b3310ddf4217b4",
+                "0xcfd20cdf07740e9c63a717076ceb724fee9c725e6a7f046f4dbe7cbc1503165d",
+                "0x0000000000000000000000002e7b9fbd8b9a1652a310f58b4854682ff045e656",
+                "0x00000000000000000000000030f50d7222e544ff5849987fd33bd9a7569c7cce"
+              ],
+              "data": "0x00000000000000000000000000000000000000000000000000000000002dc6c0000000000000000000000000000000000000000000000000000000006aa2af94"
+            }
+          ]
+        }
+      ],
+      "settlementTransactions": [
+        "0xb43e4caa3966daad8b61c44bbea5530c85417bba7abe0270f0b1773ea5e14c23"
+      ]
+    }
+  ],
+  "ledger": {
+    "reserved": "0",
+    "credits": "0",
+    "balance": "0"
+  }
+}

@@ -1,6 +1,6 @@
 # Integration and security model
 
-`CureRouter` is immutable and checks source chain 11155111, approved Aave Pool/token/debt token, provider, amount and deadline. It checks exact Aave returned amount and actual debt reduction with one base-unit scaled-debt rounding tolerance. This does not allow underpayment. It clears Pool allowance and records either Repaid or Expired, never both.
+`CureRouter` is immutable and checks source chain 11155111, approved Aave Pool/token/debt token, provider, amount and deadline. It checks exact Aave returned amount and actual debt reduction with a live-index-derived scaled-debt rounding bound (ceil(index / (2 × RAY)) + 1 base units). This does not allow underpayment. It clears Pool allowance and records either Repaid or Expired, never both.
 
 `CureMarket` runs only on 102031, escrows native CTC, bounds provider count at 32 and separates reserved funds from pull credits. Quote acceptance binds the expected price. Unused cap becomes borrower credit. An assigned request has no timer-only refund or administrator withdrawal.
 
@@ -19,6 +19,6 @@ Trust includes the source Aave deployment, Creditcoin/Attestcoin consensus and a
 - Unit/fuzz fixtures: adversarial receipt logs, proof rejection, state machines and accounting.
 - Real protocol fork: pinned Sepolia block 11660009, real faucet/Pool/debt contracts, local actor impersonation; not public transactions.
 - Historical proof: public third-party transaction, generated proof and actual native precompile read-only verification; not CureBid execution.
-- Public owned deployment/repayment/settlement/refund: still funding-blocked.
+- Public owned deployment/repayment/settlement/refund: complete for the canonical deployment; see `docs/evidence/live-execution.json` and the transaction journals.
 
 Do not conflate these evidence classes in the deck, README or video.

@@ -1,5 +1,11 @@
 import { test, expect } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
+// Isolated empty-state fixture; production keeps the real deployment manifest.
+test.beforeEach(async ({ page }) => {
+  await page.route("**/deployment.json", (route) =>
+    route.fulfill({ json: null }),
+  );
+});
 test("marketplace exposes real empty and no-wallet states", async ({
   page,
 }) => {

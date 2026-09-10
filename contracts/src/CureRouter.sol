@@ -41,8 +41,15 @@ contract CureRouter is ReentrancyGuard {
         uint256 afterDebt=IERC20(debtToken).balanceOf(t.borrower);
         require(beforeDebt>afterDebt,"no debt reduction");
         uint256 reduced=beforeDebt-afterDebt;
-        // Aave ray division/multiplication rounds the scaled debt balance. One base unit only.
-        require(reduced==actual || (reduced>actual ? reduced-actual : actual-reduced)<=1,"debt accounting");
+        // rayDiv rounds the burned scaled balance by <= 0.5 scaled unit.
+        // Two rayMul balance reads add <= 1 base unit to the difference.
+        // Bound that error using the live normalized index, not a fixed unit.
+        (bool indexOk,bytes memory encodedIndex)=pool.staticcall(abi.encodeWithSignature("getReserveNormalizedVariableDebt(address)",asset));
+        require(indexOk && encodedIndex.length==32,"debt index unavailable");
+        uint256 index=abi.decode(encodedIndex,(uint256));
+        require(index>=1e27,"invalid debt index");
+        uint256 tolerance=index/(2e27)+(index%(2e27)==0?0:1)+1;
+        require(reduced==actual || (reduced>actual ? reduced-actual : actual-reduced)<=tolerance,"debt accounting");
         outcome[digest]=1;
         emit DebtRepaid(digest,t.borrower,t.provider,actual,block.timestamp);
     }

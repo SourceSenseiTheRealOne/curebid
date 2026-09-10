@@ -4,9 +4,9 @@
 
 ## Delivery status
 
-Implemented contracts, wallet UI, read-only proof tooling and explicit testnet execution commands. **Not yet deployed; not submission-ready.** Fresh project wallets require testnet funding. No CureBid-owned public repayment, settlement or expiry-refund is claimed. `docs/evidence/historical-proof.json` is a separately labelled third-party Aave receipt verified by the real Creditcoin precompile.
+**Deployed and exercised on public testnets.** Request 1 repaid 3 USDC through Aave and reimbursed/paid out 0.07 CTC through native Attestcoin proof. Request 2 proved source expiry, refunded the borrower and paid out the refund. Canonical escrow readback: zero reserved funds, zero outstanding credits and zero balance. See [actual execution evidence](docs/evidence/execution-notes.md) and [44-second recorded UI walkthrough](docs/submission/curebid-walkthrough.mp4). This is a local UI connected to deployed public testnet contracts, not a hosted production app. Team/submission details remain user-supplied; superseded trial cleanup is tracked separately.
 
-Verified locally: 47 Foundry tests (including actual Aave supply/borrow/third-party repayment on a pinned Sepolia fork), 16 TypeScript tests, 7 browser tests, strict types, formatting and Next production build. Tests simulate cryptographic outcomes only inside contract test fixtures. Production verification cannot select a simulated verifier.
+Verified locally: 48 Foundry tests (including actual Aave supply/borrow/third-party repayment on a pinned Sepolia fork), 16 TypeScript tests, 8 browser tests, strict types, formatting and Next production build. Tests simulate cryptographic outcomes only inside contract test fixtures. Production verification cannot select a simulated verifier.
 
 ## Run
 
@@ -35,12 +35,12 @@ bash scripts/wsl-run.sh pnpm test:browser
 ## Verify without keys
 
 ```sh
-bash scripts/wsl-run.sh pnpm doctor
+bash scripts/wsl-run.sh pnpm run doctor
 bash scripts/wsl-run.sh pnpm verify:repayment 0xd85c88297918c95fdea5816a4843f2f556d902af722a49ed4c89cc189c2d29b0
 bash scripts/wsl-run.sh pnpm judge:verify
 ```
 
-The last command intentionally fails until `deployments/testnet.json` exists. A successful deployment check verifies configuration, code presence, solvency and bounded request readbacks; it does not by itself certify every submission criterion.
+The verifier checks the committed public manifest, actual code presence, immutable configuration, solvency and request states. It fails on an absent/mismatched deployment. `scripts/live-negative-proofs.ts` separately proves rejection of replay, provider/request substitution and wrong chain key using an actual owned native proof.
 
 ## Testnet-only execution
 
@@ -58,4 +58,4 @@ See [the runbook](docs/testnet-runbook.md). Never send real funds. Never paste k
 
 Not a bridge, lending pool, credit score, automatic liquidation rescue, audited protocol or production financial service. The same EOA owns the request and source debt. The same provider EOA spends on source and earns on destination. CTC quotes are total reimbursements, not dollar fees. Attestation outages may lock assigned escrow. Providers bear inventory, gas, FX and proof-latency risk.
 
-[Integration/security](docs/integration-security.md) · [Delivery checklist](docs/delivery-status.md) · [Provenance](docs/provenance.md) · [Draft deck](docs/submission/curebid-deck.pdf)
+[Integration/security](docs/integration-security.md) · [Delivery checklist](docs/delivery-status.md) · [Provenance](docs/provenance.md) · [Deck](docs/submission/curebid-deck.pdf)

@@ -1,0 +1,11 @@
+{
+  "sourceChainId": 11155111,
+  "settlementChainId": 102031,
+  "chainKey": 1,
+  "router": "0xA29c1d1F62634665740F1DDA7F1a39F95BA69c1e",
+  "market": "0x763C8394bb33E64F84395E99e3C416f05C06a2D2",
+  "verifier": "0xA29c1d1F62634665740F1DDA7F1a39F95BA69c1e",
+  "debtToken": "0x36B5dE936eF1710E1d22EabE5231b28581a92ECc",
+  "sourceBlock": 11674961,
+  "settlementBlock": 5463520
+}

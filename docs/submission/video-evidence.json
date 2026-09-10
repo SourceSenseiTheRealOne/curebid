@@ -1,0 +1,12 @@
+{
+  "file": "curebid-walkthrough.mp4",
+  "sha256": "1663334036277462052ad4c9f7cffbff54fbe39dee3b4f5ebf7cbd3532f67a86",
+  "bytes": 1279222,
+  "durationSeconds": 44.48,
+  "width": 1440,
+  "height": 900,
+  "fps": 25,
+  "codec": "h264",
+  "audio": "none; silent captioned walkthrough",
+  "provenance": "Local UI displaying real public testnet state and receipts. Recorded walkthrough, not live signing. Full FFmpeg decode passed; beginning/middle/end frames inspected."
+}

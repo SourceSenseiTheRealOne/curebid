@@ -1,30 +1,24 @@
 # CureBid delivery status
 
-## Verified
-- [x] Recovered approved original design and six-task implementation plan.
-- [x] Ubuntu-only toolchain and canonical checkout; no old wallet migration.
-- [x] Strict TypeScript amount/domain/deployment guards and 16 passing tests.
-- [x] 47 passing Foundry tests including real Aave fork supply/borrow/repayment.
-- [x] Actual historical Aave receipt proof reverified through the native Creditcoin precompile.
-- [x] Required routes, injected-wallet actions, real RPC projections, honest undeployed/error states.
-- [x] Original Three.js mechanism, pause/reduced-motion/hidden/offscreen handling, disposal and fallback.
-- [x] 7 passing browser tests, light/dark desktop screenshots and 320px fallback inspection.
-- [x] Production build, strict types, formatting.
+## Verified implementation and public execution
+- [x] Approved design/plan recovered; Ubuntu-only toolchain and canonical checkout retained.
+- [x] 48 Foundry tests including real Aave supply/borrow/repayment and a regression reproducing live accrued-index rounding.
+- [x] 16 TypeScript tests; strict types and formatting.
+- [x] Immutable corrected contracts deployed to Sepolia/Creditcoin. Public manifests and constructor-bound transactions retained.
+- [x] Request 1: two real quotes, provider selection, 3 USDC repayment, native-proof settlement, provider payout and surplus withdrawal.
+- [x] Request 2: genuine source expiry, native-proof refund and borrower withdrawal.
+- [x] Canonical escrow: zero reserved funds, zero credits, zero balance after withdrawals.
+- [x] Four deployed eth_call negative proofs reject replay, provider substitution, request substitution and wrong chain key.
+- [x] Deployment recovery resumed matching confirmed contracts after interruption; timed-out create was recovered from chain without duplication.
+- [x] Required wallet routes, real RPC projections and published evidence inspector. Source/settlement statuses remain distinct.
+- [x] 3D scene, themes, 320px layout, pause/reduced-motion/fallback and actual request browser checks (8 tests).
+- [x] Production build and measured Lighthouse audit: performance 82, accessibility 100; LCP 0.9s, CLS 0.004, TBT 720ms. Lab results, not field INP.
+- [x] Seven-slide evidence-backed deck and 44.48-second silent recorded UI walkthrough, explicitly labelled local UI/public testnets and not live signing.
 
-## Implemented but live-unverified
-- [ ] Deployment and operation CLI: funding stops the real signing path.
-- [ ] Wallet-backed request, two quotes, selection, repayment, proof settlement and withdrawal on public testnets.
-- [ ] Genuine expiry transaction and proof-backed refund.
-- [ ] Request-bound source-confirmed/settlement-pending UI against an actual deployment.
-- [ ] Full interrupted deployment/setup recovery; current runbook requires operator inspection of partial operations.
-- [x] Hosted CI passed for code commit `2724c115e98c9edff2ac5a8d8d6792b9baa2cd3d`: https://github.com/SourceSenseiTheRealOne/curebid/actions/runs/34379575365
-- [x] Dependency remediation verified: `pnpm audit` reports no known vulnerabilities after Vitest 4.1.11 and ws 8.21.0 pins.
+## Remaining handoff items (not disguised as completed)
+- [ ] Superseded trial escrow cleanup: its own original two-hour deadline must expire. Bounded `cleanup-superseded.ts` worker waits for proof-safe recovery; read `superseded-cleanup.json` before calling it complete.
+- [ ] Team identity, organiser form and actual hackathon submission require user input/action.
+- [ ] Public frontend hosting is not configured. Contracts and receipt evidence are public; the app itself is run locally.
+- [ ] Autonomous recovery of every arbitrary interrupted setup is not claimed: ambiguous pre-broadcast intents fail closed for operator inspection.
 
-## Submission gaps
-- [ ] Public testnet deployment manifest and owned execution hashes.
-- [ ] Actual-flow prototype video (do not substitute empty-state browser footage).
-- [ ] Team details supplied by the user and organiser submission.
-- [ ] Final deck update from draft/funding-blocked status after live execution.
-- [ ] Measured performance audit and expanded browser transaction coverage.
-
-The original plan is not fully complete. Shipping source to main does not change these outstanding acceptance criteria. Current user direction supersedes the original no-push/no-commit restriction and optional independent-review process; it does not permit invented live proof.
+Current execution receipts, superseded-deployment history and exact proof boundaries are documented in `docs/evidence/execution-notes.md`. This is a testnet prototype, not an audited production financial service.

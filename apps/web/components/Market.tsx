@@ -439,13 +439,25 @@ export function Market({
                   )}
                 </>
               )}
-              {r.state === 2 && (
+              {r.state >= 2 && r.state <= 4 && (
                 <>
                   <p className="address">Selected provider: {r.provider}</p>
                   <p>
                     Selected reimbursement: {formatUnits(r.reimbursement, 18)}{" "}
                     CTC
                   </p>
+                  <details>
+                    <summary>Binding quote history ({r.quotes.length})</summary>
+                    {r.quotes.map((q) => (
+                      <p className="address" key={q.provider}>
+                        {q.provider}: {formatUnits(q.amount, 18)} CTC
+                      </p>
+                    ))}
+                  </details>
+                </>
+              )}
+              {r.state === 2 && (
+                <>
                   <div className="actions">
                     <button
                       disabled={

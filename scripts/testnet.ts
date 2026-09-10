@@ -18,6 +18,7 @@ const [command, flag, requestId, hash] = process.argv.slice(2);
 const allowed = [
   "setup",
   "create",
+  "create-expiry",
   "quote-a",
   "quote-b",
   "accept",
@@ -163,13 +164,17 @@ try {
     const actual = await debt.getFunction("balanceOf")(borrower.address);
     if (actual < 10_000_000n) throw new Error("Debt setup readback failed");
     console.log("Aave debt base units", String(actual));
-  } else if (command === "create") {
+  } else if (command === "create" || command === "create-expiry") {
     const block = await destination.getBlock("latest");
     if (!block) throw new Error("No latest block");
     const receipt = await send(
       new Contract(d.market, abi, borrower),
       "createRequest",
-      [3_000_000n, block.timestamp + 1800, block.timestamp + 7200],
+      [
+        3_000_000n,
+        block.timestamp + (command === "create-expiry" ? 180 : 1800),
+        block.timestamp + (command === "create-expiry" ? 600 : 7200),
+      ],
       parseEther("0.1"),
     );
     const log = receipt.logs

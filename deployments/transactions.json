@@ -1,0 +1,20 @@
+{
+  "CureRouter": {
+    "address": "0xD0007a77bdeEc0A554b2A55E13A542c684Df73E9",
+    "transactionHash": "0x36a267b47535d3331e1e365e22b4234bac1026a480b324be48f8078d5f33e07d",
+    "block": 11675043,
+    "initHash": "0xe7d71e963a757db4ec384cc5e80a39f0cc44f02db1fed590f3438be1d6839ab5"
+  },
+  "AttestcoinVerifier": {
+    "address": "0x682E804C025342AD83143DFc097836ee396eFE8C",
+    "transactionHash": "0x8650c7005842977f7fa65bd26dc552815f0852dea7ff3be39c0494002986f812",
+    "block": 5463587,
+    "initHash": "0x57c59f31580baa12859fd90e1206754c25014d7805a2cf1e0a2a98b922ce10c5"
+  },
+  "CureMarket": {
+    "address": "0xD0007a77bdeEc0A554b2A55E13A542c684Df73E9",
+    "transactionHash": "0x471f2c95498576e5b5b6bb58705696822a17d9966283b2d512029293ac143770",
+    "block": 5463613,
+    "initHash": "0x77d44560dcf7e6c7ee16cc78af09344cfb33bc682976811977fedd062323a72c"
+  }
+}

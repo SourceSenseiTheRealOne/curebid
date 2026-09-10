@@ -29,7 +29,7 @@ try {
     JSON.stringify({
       slides,
       pdf: "docs/submission/curebid-deck.pdf",
-      status: "draft; live testnet execution pending",
+      status: "public testnet repayment and refund verified",
     }),
   );
 } finally {

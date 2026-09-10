@@ -12,6 +12,17 @@ contract AaveForkTest {
     address constant POOL=0x6Ae43d3271ff6888e7Fc43Fd7321a503ff738951;
     address constant ASSET=0x94a9D9AC8a22534E3FaCa9F4e7F2E2cf85d5E4C8;
     address constant DEBT=0x36B5dE936eF1710E1d22EabE5231b28581a92ECc;
+    function testAccruedIndexRepaymentRegression() public {
+        VmFork(address(vm)).createSelectFork("https://sepolia.gateway.tenderly.co",11674990);
+        address borrower=0x2E7b9fbd8b9a1652A310f58b4854682Ff045E656;
+        address provider=0x30f50d7222e544FF5849987Fd33bd9A7569C7CCe;
+        CureRouter router=new CureRouter(POOL,ASSET,DEBT);
+        CureTerms.Terms memory t=CureTerms.Terms(102031,address(0xC0),1,11155111,address(router),POOL,ASSET,borrower,provider,3000000,block.timestamp+3600);
+        uint256 beforeDebt=IERC20(DEBT).balanceOf(borrower);
+        vm.startPrank(provider); IERC20(ASSET).approve(address(router),3000000); router.repay(t); vm.stopPrank();
+        require(beforeDebt-IERC20(DEBT).balanceOf(borrower)==3000002,"regression requires real two-unit rounding");
+        require(router.outcome(CureTerms.hash(t))==1,"repaid");
+    }
     function testRealAaveSupplyBorrowAndThirdPartyRepayment() public {
         VmFork(address(vm)).createSelectFork(VmFork(address(vm)).envOr("SEPOLIA_FORK_RPC","https://ethereum-sepolia-rpc.publicnode.com"),11660009);
         address borrower=address(0xB0110); address provider=address(0xA1110);

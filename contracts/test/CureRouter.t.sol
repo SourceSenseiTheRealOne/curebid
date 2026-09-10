@@ -23,6 +23,7 @@ contract TestPool {
     TestToken public asset; TestToken public debt; bool public shortPay;
     constructor(TestToken a,TestToken d) { asset=a; debt=d; }
     function setShort(bool b) external { shortPay=b; }
+    function getReserveNormalizedVariableDebt(address) external pure returns(uint256) { return 1e27; }
     function getReserveData(address) external view returns(uint256[16] memory r) { r[10]=uint160(address(debt)); }
     function repay(address a,uint256 n,uint256 mode,address borrower) external returns(uint256) {
         require(a==address(asset) && mode==2);
